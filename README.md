@@ -38,14 +38,13 @@ pip install pandas matplotlib xlsxwriter
 1. Clone o repositório (ou faça o download do código):
 
    ```bash
-   git clone <URL_do_repositório>
+   git clone https://github.com/drgsantaana/dijkstra_shortest_path.git
    ```
-   (Substitua `<URL_do_repositório>` pela URL correta do repositório, se aplicável. Ou baixe os arquivos do projeto manualmente.)
 
 2. Navegue até o diretório do projeto:
 
    ```bash
-   cd <caminho_para_o_diretorio_do_projeto>
+   cd dijkstra_shortest_path
    ```
 
 3. Execute o script principal:
