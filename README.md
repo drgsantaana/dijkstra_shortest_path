@@ -1,6 +1,6 @@
 # The Shortest Path Finder for Tsunami Evacuation - Implementação em Python
 
-Este projeto implementa uma versão simplificada e adaptada da lógica apresentada no artigo *"The Shortest Path Finder for Tsunami Evacuation Strategy using Dijkstra Algorithm"* para a disciplina de Técnicas de Programação, ministrada pela professora Natalia Camilo. O projeto foi desenvolvido pelo aluno Daniel Reis.
+Este projeto implementa uma versão simplificada e adaptada da lógica apresentada no artigo *"The Shortest Path Finder for Tsunami Evacuation Strategy using Dijkstra Algorithm"* para a disciplina de Técnicas de Programação, ministrada pela professora Natalia Camillo.
 
 ## Objetivo
 
