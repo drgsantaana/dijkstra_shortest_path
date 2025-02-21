@@ -73,8 +73,7 @@ intersections = {
     '38': (-7.692, 109.058), # Rua10_AvB
     '39': (-7.691, 109.060), # Rua10_AvC
     '40': (-7.690, 109.062), # Rua10_AvD
-
-    '41': (-7.741, 109.022),  # Adicionadas interseções extras
+    '41': (-7.741, 109.022), 
     '42': (-7.739, 109.024),
     '43': (-7.737, 109.026),
     '44': (-7.732, 109.028),
@@ -200,30 +199,34 @@ for node in connections:
 # ALGORITMO DE DIJKSTRA
 # ===================================================
 def dijkstra(graph, start, end):
-    distances = {node: float('inf') for node in graph}
-    distances[start] = 0
-    unvisited = list(graph.keys())
-    previous = {}
+
+    distances = {node: float('inf') for node in graph}  # Distâncias iniciais (infinito)
+    distances[start] = 0  # Distância do nó inicial para ele mesmo é zero
+    unvisited = list(graph.keys())  # Lista de nós não visitados
+    previous = {}  # Dicionário para armazenar o nó anterior no caminho
 
     while unvisited:
+        # Seleciona o nó não visitado com a menor distância
         current_node = min(unvisited, key=lambda node: distances[node])
         current_dist = distances[current_node]
 
-        if current_node == end:
+        if current_node == end:  # Se chegou ao destino, reconstrói o caminho
             path = []
             while current_node in previous:
                 path.insert(0, current_node)
                 current_node = previous[current_node]
             path.insert(0, start)
-            return (current_dist, path)
+            return (current_dist, path)  # Retorna a distância e o caminho
 
-        unvisited.remove(current_node)
+        unvisited.remove(current_node)  # Remove o nó atual da lista de não visitados
 
+        # Atualiza as distâncias dos vizinhos
         for neighbor, weight in graph[current_node].items():
             if neighbor in distances and distances[neighbor] > current_dist + weight:
                 distances[neighbor] = current_dist + weight
-                previous[neighbor] = current_node
-    return (float('inf'), [])
+                previous[neighbor] = current_node  # Atualiza o nó anterior
+
+    return (float('inf'), [])  # Se não encontrar caminho, retorna distância infinita e lista vazia
 
 # ===================================================
 # FUNÇÃO PARA PLOTAR AS ROTAS
